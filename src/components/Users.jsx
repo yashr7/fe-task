@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from "./actions";
+import { fetchUsers } from "../features/actions";
 import Axios from "axios";
 
 const Users = () => {
