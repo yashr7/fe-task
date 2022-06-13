@@ -26,14 +26,18 @@ const Users = () => {
       return <h1>Loading...</h1>;
     }
     return (
-      <div className="h-screen flex flex-col justify-center items-center">
+      <div className="h-screen flex flex-col justify-center items-center Pastel bg-gradient-to-tr from-violet-500 to-orange-300">
         {user.first_name ? (
-          <div className="flex flex-col justify-center items-center border-2 border-black w-4/5 h-4-5 p-4 m-4">
+          <div className="rounded-md flex flex-col justify-center items-center border-4 border-black w-4/5 h-80 p-4 m-4 bg-gradient-to-r from-gray-700 via-gray-900 to-black text-gray-300 transition-all">
             <h1 className="font-bold text-2xl">
               {user.first_name + " " + user.last_name}
             </h1>
             <p className="font-semibold text-xl">{user.email}</p>
-            <img className="mt-3" src={user.avatar} alt="" />
+            <img
+              className="mt-4 h-40 w-40 object-fit rounded-full border border-black"
+              src={user.avatar}
+              alt=""
+            />
           </div>
         ) : (
           <div>
@@ -42,12 +46,12 @@ const Users = () => {
             </h1>
           </div>
         )}
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center flex-wrap">
           {users.items.map((user) => {
             return (
               <button
                 onClick={() => getUser(user.id)}
-                className="border-2 border-black font-bold m-2 p-4 hover:border-red-500"
+                className="rounded-md border-2 border-slate-600 font-bold m-3 p-3 w-20 bg-gradient-to-r from-purple-500 to-pink-300 hover:bg-gradient-to-l focus:ring-1 focus:ring-purple-200 dark:focus:ring-purple-600 text-center transition-all duration-200 ease-in-out"
                 key={user.id}
               >
                 {user.id}
